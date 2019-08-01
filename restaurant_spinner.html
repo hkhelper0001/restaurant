@@ -2,6 +2,14 @@
 <html>
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144974687-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-144974687-1');
+  </script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>今晚去邊打邊爐?</title>
   <style type="text/css">
@@ -26,7 +34,7 @@
 </head>
 
 <body onload="init()">
-  <div style='text-align: center; height: 50px;'>攪珠打邊爐  每日下午6時正開盤<br/>最後更新: <span id='lastUpdate'></span></div>
+  <div style='text-align: center; height: 50px;'>攪珠打邊爐 每日下午6時正開盤<br />最後更新: <span id='lastUpdate'></span></div>
   <div id="chart"></div>
   <script type="text/javascript">
     var result;
@@ -128,6 +136,9 @@
       vis.attr('transform', 'rotate(' + oldrotation + ')');
 
       function spin(d) {
+        gtag('event', 'click', {
+          'event_category': 'draw'
+        });
         container.on("click", null);
         var ps = 360 / restaurants.length,
           pieslice = Math.round(1440 / restaurants.length);
