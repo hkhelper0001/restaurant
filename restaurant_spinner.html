@@ -54,6 +54,11 @@
     };
 
     function init() {
+			var disclaimer = '有鑑於香港近月經常發生遊行示威等活動，嚴重影響商戶營業及消費情緒，晚巿飲食業尤甚，加上鄰近地區旅客亦有放援跡像，令情況雪上加霜。為了鼓勵本地消費，刺激經濟，一班熱愛香港的IT人特意設計此打邊爐推薦器，每天鼓勵香港人到不同地區晚飯，務求雪中送炭。\n本人承諾不會利用此工具作不法用途。';
+			var iAgree = confirm(disclaimer);
+			if (!iAgree) {
+				window.location = 'https://lihkg.com/category/1';
+			}
       var xmlhttp = new XMLHttpRequest();
       var url = "https://hotpot-results.s3-ap-northeast-1.amazonaws.com/result.json?" + Math.random();
       xmlhttp.onreadystatechange = function () {
